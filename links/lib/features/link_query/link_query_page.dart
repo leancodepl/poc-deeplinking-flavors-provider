@@ -30,7 +30,7 @@ class LinkQueryScreen extends StatelessWidget {
             for (final entry in queryParameters.entries)
               ListTile(
                 title: Text(entry.key),
-                subtitle: Text(entry.value),
+                subtitle: Text(entry.value.isEmpty ? '<empty>' : entry.value),
               ),
           ],
         ),
