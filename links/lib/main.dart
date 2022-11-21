@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:links/home_page.dart';
+import 'package:links/links/handlers/link_navigator.dart';
 import 'package:links/links/handlers/logging_handler.dart';
 import 'package:links/links/link_listener.dart';
 import 'package:logging/logging.dart';
@@ -23,11 +24,16 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.amber,
       ),
-      home: LinkListener(
-        handlers: [
-          LoggingHandler(),
-        ],
-        child: const MyHomePage(),
+      home: Builder(
+        builder: (context) {
+          return LinkListener(
+            handlers: [
+              LoggingHandler(),
+              LinkNavigator(context: context),
+            ],
+            child: const HomePage(),
+          );
+        },
       ),
     );
   }
