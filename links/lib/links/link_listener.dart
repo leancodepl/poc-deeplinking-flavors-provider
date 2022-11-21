@@ -15,20 +15,27 @@ class LinkListener extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    useEffect(() {
-      final sub = uriLinkStream.listen((link) {
-        if (link == null) {
-          return;
-        }
+    useEffect(
+      () {
+        void linkListener(Uri? link) {
+          if (link == null) {
+            return;
+          }
 
-        for (final handler in handlers) {
-          if (handler.handle(link)) {
-            break;
+          for (final handler in handlers) {
+            if (handler.handle(link)) {
+              break;
+            }
           }
         }
-      });
-      return sub.cancel;
-    });
+
+        getInitialUri().then(linkListener);
+
+        final sub = uriLinkStream.listen(linkListener);
+        return sub.cancel;
+      },
+      [],
+    );
 
     return child;
   }
