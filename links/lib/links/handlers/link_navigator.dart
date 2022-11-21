@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:links/features/link_path/link_path_page.dart';
+import 'package:links/features/link_query/link_query_page.dart';
 import 'package:links/home_page.dart';
 import 'package:links/links/link_handler.dart';
 
@@ -23,10 +24,8 @@ class LinkNavigator extends LinkHandler {
         return MaterialPageRoute<void>(
           builder: (context) => const HomePage(),
         );
-      // case '/query':
-      //   return MaterialPageRoute<void>(
-      //     builder: (context) => const LinkQueryPage(),
-      //   );
+      case '/query':
+        return LinkQueryPage(queryParameters: link.queryParameters);
       default:
         return LinkPathPage(pathSegments: link.pathSegments);
     }
