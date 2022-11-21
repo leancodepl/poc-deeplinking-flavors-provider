@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void _share() {
-    // TODO: Share the app
-    throw UnimplementedError();
-  }
+  static final Uri _sharingLink = Uri(
+    scheme: 'https',
+    host: 'links.example.com',
+    path: '/path/to/a/shared/resource',
+  );
 
   @override
   Widget build(BuildContext context) {
+    Future<void> share() async {
+      final result = await Share.shareWithResult(
+        _sharingLink.toString(),
+        subject: 'Check out this link!',
+      );
+
+      ScaffoldMessenger.of(context)
+        ..clearSnackBars()
+        ..showSnackBar(
+          SnackBar(
+            content: Text(result.status.toString()),
+          ),
+        );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Links Demo'),
@@ -69,7 +86,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             ElevatedButton(
-              onPressed: _share,
+              onPressed: share,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
