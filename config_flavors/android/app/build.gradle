@@ -69,7 +69,6 @@ android {
             applicationIdSuffix '.A'
             versionNameSuffix '-A'
             manifestPlaceholders = [app_name: 'Config Flavors A']
-            Project.properties['app_name'] = 'Config Flavors A'
         }
 
         B {
