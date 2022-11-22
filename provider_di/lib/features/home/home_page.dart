@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_di/features/settings/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -23,6 +24,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.of(context).push<void>(SettingsPage());
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
