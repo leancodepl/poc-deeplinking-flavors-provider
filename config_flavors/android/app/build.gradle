@@ -60,6 +60,32 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions 'flavor'
+
+    productFlavors {
+        A {
+            dimension 'flavor'
+            applicationIdSuffix '.A'
+            versionNameSuffix '-A'
+            manifestPlaceholders = [app_name: 'Config Flavors A']
+            Project.properties['app_name'] = 'Config Flavors A'
+        }
+
+        B {
+            dimension 'flavor'
+            applicationIdSuffix '.B'
+            versionNameSuffix '-B'
+            manifestPlaceholders = [app_name: 'Config Flavors B']
+        }
+
+        C {
+            dimension 'flavor'
+            applicationIdSuffix '.C'
+            versionNameSuffix '-C'
+            manifestPlaceholders = [app_name: 'Config Flavors C']
+        }
+    }
 }
 
 flutter {
