@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider_di/features/settings/settings_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-
-  final String title;
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Provider DI Demo'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
