@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debug C" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="additionalArgs" value="--dart-define FLAVOR_NAME=C --dart-define APP_NAME=&quot;Flavor Test Gamma&quot; --dart-define API_KEY=gamma-key --dart-define FEATURE_1_ENABLED=false" />
+    <option name="buildFlavor" value="C" />
+    <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>
