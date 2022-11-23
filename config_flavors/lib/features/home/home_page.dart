@@ -1,4 +1,4 @@
-import 'package:config_flavors/app_config.dart' as AppConfig;
+import 'package:config_flavors/app_config.dart' as app_config;
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,17 +16,17 @@ class HomePage extends StatelessWidget {
           children: [
             const ListTile(
               title: Text('Flavor'),
-              subtitle: Text(AppConfig.flavorName),
+              subtitle: Text(app_config.flavorName),
             ),
             const ListTile(
               title: Text('App name'),
-              subtitle: Text(AppConfig.appName),
+              subtitle: Text(app_config.appName),
             ),
             const ListTile(
               title: Text('API key'),
-              subtitle: Text(AppConfig.apiKey),
+              subtitle: Text(app_config.apiKey),
             ),
-            if (AppConfig.feature1Enabled)
+            if (app_config.feature1Enabled)
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context)
