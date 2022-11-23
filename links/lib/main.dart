@@ -20,10 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Links Demo',
-      theme: ThemeData(
+      theme: ThemeData.from(
         useMaterial3: true,
-        brightness: Brightness.dark,
-        primarySwatch: Colors.amber,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.amber,
+          brightness: Brightness.dark,
+        ),
       ),
       home: Builder(
         builder: (context) {

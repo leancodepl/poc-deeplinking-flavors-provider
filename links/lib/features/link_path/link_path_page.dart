@@ -47,10 +47,7 @@ class _LinkSegments extends StatelessWidget {
         : Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: Theme.of(context)
-                  .colorScheme
-                  .primaryContainer
-                  .withOpacity(0.1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
             ),
             padding: const EdgeInsets.all(16),
             child: Column(
