@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug A",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor", "A",
+                "--dart-define", "FLAVOR_NAME=A",
+                "--dart-define", "APP_NAME=Flavor Test Alpha",
+                "--dart-define", "API_KEY=1234567890abcdefghijkl",
+                "--dart-define", "FEATURE_1_ENABLED=true"
+            ]
+        },
+        {
+            "name": "Debug B",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor", "B",
+                "--dart-define", "FLAVOR_NAME=B",
+                "--dart-define", "APP_NAME=Flavor Test Beta",
+                "--dart-define", "API_KEY=1111",
+                "--dart-define", "FEATURE_1_ENABLED=false"
+            ]
+        },
+        {
+            "name": "Debug C",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--flavor", "C",
+                "--dart-define", "FLAVOR_NAME=C",
+                "--dart-define", "APP_NAME=Flavor Test Gamma",
+                "--dart-define", "API_KEY=gamma-key",
+                "--dart-define", "FEATURE_1_ENABLED=false"
+            ]
+        }
+    ]
+}

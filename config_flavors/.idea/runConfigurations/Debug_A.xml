@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Debug A" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="additionalArgs" value="--dart-define FLAVOR_NAME=A --dart-define APP_NAME=&quot;Flavor Test Alpha&quot; --dart-define API_KEY=1234567890abcdefghijkl --dart-define FEATURE_1_ENABLED=true" />
+    <option name="buildFlavor" value="A" />
+    <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>
