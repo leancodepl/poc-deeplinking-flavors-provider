@@ -28,7 +28,16 @@ class HomePage extends StatelessWidget {
             ),
             if (AppConfig.feature1Enabled)
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context)
+                    ..clearSnackBars()
+                    ..showSnackBar(
+                      const SnackBar(
+                        behavior: SnackBarBehavior.floating,
+                        content: Text('Feature 1 is enabled'),
+                      ),
+                    );
+                },
                 child: const Text('Go to feature 1'),
               ),
           ],
