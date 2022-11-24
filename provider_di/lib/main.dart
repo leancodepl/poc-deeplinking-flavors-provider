@@ -16,22 +16,19 @@ class MyApp extends StatelessWidget {
     return GlobalProviders(
       child: Builder(
         builder: (context) {
-          final appSettings = context.read<AppSettings>();
+          final appSettings = context.watch<AppSettings>();
 
-          return AnimatedBuilder(
-            animation: appSettings,
-            builder: (context, child) => MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData.from(
-                useMaterial3: true,
-                colorScheme: ColorScheme.fromSeed(
-                  seedColor: Colors.red,
-                  brightness:
-                      appSettings.darkMode ? Brightness.dark : Brightness.light,
-                ),
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData.from(
+              useMaterial3: true,
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: Colors.red,
+                brightness:
+                    appSettings.darkMode ? Brightness.dark : Brightness.light,
               ),
-              home: const HomePage(),
             ),
+            home: const HomePage(),
           );
         },
       ),
